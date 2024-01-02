@@ -1,0 +1,192 @@
+1) Replace
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package replace;
+
+/**
+ *
+ * @author rajap
+ */
+public class Replace {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int first = 7;
+        int second = 17;
+        System.out.println ("first="+first+"second="+second);
+    }
+    
+}
+
+
+2) a=b and b=a
+
+package replace;
+
+/**
+ *
+ * @author rajap
+ */
+public class Replace {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int first = 7;
+        int second = 17;
+        int third;
+        third = second;
+        second = first;
+        first = third;
+        System.out.println ("first=" + first + "second=" + second);
+    }
+    
+}
+
+
+3) Temperature
+
+package temperature;
+
+/**
+ *
+ * @author rajap
+ */
+public class Temperature {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        System.out.println("Give in the Celsius Value: ");
+        java.util.Scanner SC = new java.util.Scanner(System.in);
+        double celsius = SC.nextDouble();
+        double fahrenheit = 9.0/5.0 * celsius + 32.0;
+        System.out.println("Fahrenheit:" + fahrenheit);
+              
+    }
+    
+}
+
+4) Boiling
+
+package boiling;
+
+/**
+ *
+ * @author rajap
+ */
+import java.util.Scanner;
+public class Boiling {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        System.out.println("Give the temperature value");
+        Scanner SC = new Scanner(System.in);
+        int temp = SC.nextInt();
+        if(temp>=100)
+        {
+            System.out.println("The water is boiling.");
+        }
+        else
+        {
+            System.out.println("the water is not boiling.");
+        }
+    }
+    
+}
+
+5) Boiling and Freezing 
+
+import java.util.Scanner;
+public class BoilingAndFreezing {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        System.out.println("Give the temperature value");
+        Scanner SC = new Scanner(System.in);
+        int temp = SC.nextInt();
+        if(temp>=100)
+        {
+            System.out.println("The water is boiling.");
+        }
+        else if (temp<=0)
+        
+        {
+            System.out.println("the water is freezing.");
+        }
+        else
+        {
+                System.out.println("the water is in normalstate.");
+                }
+    }
+    
+}
+
+6) Fighting
+
+public class Fighting {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Attack Points of Monster:");
+        int monsterattack = sc.nextInt();
+        System.out.println("Deffence Points of Monster:");
+        int monsterdeffence = sc.nextInt();
+        System.out.println("Damage of Monster:");
+        int monsterdamage = sc.nextInt();
+        System.out.println("Life point of Monster:");
+        int monsterlife = sc.nextInt();
+        System.out.println("Your Attack Points:");
+        int yourattack = sc.nextInt();
+        System.out.println("Your Defence Points:");
+        int yourdefence = sc.nextInt();
+        System.out.println("Your Damage");
+        int yourdamage = sc.nextInt();
+        System.out.println("Your Life Points: ");
+        int yourlife = sc.nextInt();
+        
+        Random generator = new Random();
+        boolean attacker = generator.nextBoolean();
+        if (attacker)
+        {
+            System.out.println("You attack");
+            int dice = generator.nextInt(6)+1+generator.nextInt(6)+1;
+            int attackvalue = yourattack +dice;
+            System.out.println("Rolled Values:"+dice);
+            System.out.println("Your Attack Value :"+attackvalue);
+            if (attackvalue>monsterdeffence)
+            {
+                System.out.println("Your Attack was Successfull.");
+                monsterlife = monsterlife - yourdamage;
+                System.out.println("Monster's remaining Life Points:"+monsterlife);
+            }
+            else
+            {
+                System.out.println("Your Attack was not Successfull.");
+            }
+            
+        }
+        
+        else
+        {
+            System.out.println("Monster's Attack was not Sucessfull.");
+        }
+    }
+    
+}
+
